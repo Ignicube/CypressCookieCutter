@@ -1,0 +1,19 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add-project": "hygen project with-prompt && prettier --write . >/dev/null",
+    "pretest": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.7.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-testrail": "^2.9.0",
+    "cypress-testrail-reporter": "^1.3.4"
+  }
+}
