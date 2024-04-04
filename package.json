@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Ignicube/CypressCookieCutter#readme",
   "devDependencies": {
+    "cypress-xpath": "^2.0.1",
     "semantic-release": "21.0.6"
   },
   "scripts": {
@@ -227,8 +228,8 @@
     "split": "^1.0.1",
     "split2": "^3.2.2",
     "stream-combiner2": "^1.1.1",
-    "string-width": "^4.2.3",
     "string_decoder": "^1.1.1",
+    "string-width": "^4.2.3",
     "strip-ansi": "^6.0.1",
     "strip-bom": "^3.0.0",
     "strip-final-newline": "^3.0.0",
