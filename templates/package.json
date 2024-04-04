@@ -14,6 +14,7 @@
     "cypress": "^13.7.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-testrail": "^2.9.0",
-    "cypress-testrail-reporter": "^1.3.4"
+    "cypress-testrail-reporter": "^1.3.4",
+    "cypress-xpath": "^2.0.1"
   }
 }

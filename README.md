@@ -177,22 +177,15 @@ export default generalActions
 Usage:
 
 ```js
-import * as pages from "../pages";
+import * as pages from '../pages'
 
-describe("Visit", () => {
-  it("Visit", () => {
-    pages.generalActions.clickButtonUsingLocator(
-      elements.pageElements.googleInput
-    );
-    pages.generalActions.typeInInput(
-      elements.pageElements.googleInput,
-      data.defaultData.input
-    );
-    pages.generalActions.clickButtonUsingLabel(
-      labels.pageLabels.googleSearchLabel
-    );
-  });
-});
+describe('Visit', () => {
+  it('Visit', () => {
+    pages.generalActions.clickButtonUsingLocator(elements.pageElements.googleInput)
+    pages.generalActions.typeInInput(elements.pageElements.googleInput, data.defaultData.input)
+    pages.generalActions.clickButtonUsingLabel(labels.pageLabels.googleSearchLabel)
+  })
+})
 ```
 
 In `fixture > project > projectENV.json` define your `baseUrl` and other URLs per each environment.
@@ -217,13 +210,13 @@ Preview
 Usage:
 
 ```js
-import { projectENV } from "../../../support/helpers";
+import { projectENV } from '../../../support/helpers'
 
-describe("Should visit admin", () => {
-  it("Visit", () => {
-    cy.visit(projectENV.admin);
-  });
-});
+describe('Should visit admin', () => {
+  it('Visit', () => {
+    cy.visit(projectENV.admin)
+  })
+})
 ```
 
 `projectENV` will always return URL from current set environment, which in this case, is `production`.
@@ -258,14 +251,14 @@ Preview
 Usage:
 
 ```js
-import { projectENV, credetials } from "../../../support/helpers";
+import { projectENV, credetials } from '../../../support/helpers'
 
-describe("Should visit admin", () => {
-  it("Visit and log in ", () => {
-    cy.visit(projectENV.admin);
-    cy.logIn(credetials.sampleUser2);
-  });
-});
+describe('Should visit admin', () => {
+  it('Visit and log in ', () => {
+    cy.visit(projectENV.admin)
+    cy.logIn(credetials.sampleUser2)
+  })
+})
 ```
 
 <h1 >Checkout a few plugins recorded underneath</h1>
@@ -326,18 +319,37 @@ Drag-n-drop component, this function is already available in general action
 ```js
 const uploadFileUsingLocatorDandD = (locator, path) => {
   return cy.get(locator).attachFile(path, {
-    action: "drag-drop",
-  });
-};
+    action: 'drag-drop',
+  })
+}
 ```
 
 Attaching multiple files
 
 ```js
-cy.get('[data-cy="file-input"]').attachFile([
-  "myfixture.json",
-  "myfixture.json",
-]);
+cy.get('[data-cy="file-input"]').attachFile(['myfixture.json', 'myfixture.json'])
+```
+
+## Cypress-xpath-Embedded Plugin
+
+Type cy. will have xpath command, at some point it's troublesome to discover element's on web than xpath will makes a difference
+
+Usage:
+
+```js
+it('xpath usage', () => {
+  cy.xpath('//body/div[1]/div[2]/div[1]/img[1]').should('be.visible')
+})
+```
+
+If using TypeScript, add cypress-xpath to the list of types to be loaded in tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "types": ["cypress", "cypress-xpath"]
+  }
+}
 ```
 
 ## Brief

@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Ignicube/CypressCookieCutter#readme",
   "devDependencies": {
+    "cypress-xpath": "^2.0.1",
     "semantic-release": "21.0.6"
   },
   "scripts": {
