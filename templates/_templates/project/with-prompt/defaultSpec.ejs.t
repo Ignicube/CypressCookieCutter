@@ -19,6 +19,9 @@ Cypress._.times(1, () => {
             it('C10: TestCase Name', () => {
                 pages.pageActions.verifyPageURL()
             })
+            it('xpath usage', () => {
+                cy.xpath('//body/div[1]/div[2]/div[1]/img[1]').should('be.visible')
+            })
         after(() => {
             // Will run after testcase execution
         })
