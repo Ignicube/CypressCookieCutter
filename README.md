@@ -177,6 +177,7 @@ export default generalActions
 Usage:
 
 ```js
+
 import * as pages from '../pages'
 
 describe('Visit', () => {
@@ -186,6 +187,7 @@ describe('Visit', () => {
     pages.generalActions.clickButtonUsingLabel(labels.pageLabels.googleSearchLabel)
   })
 })
+
 ```
 
 In `fixture > project > projectENV.json` define your `baseUrl` and other URLs per each environment.
@@ -210,6 +212,7 @@ Preview
 Usage:
 
 ```js
+
 import { projectENV } from '../../../support/helpers'
 
 describe('Should visit admin', () => {
@@ -251,6 +254,7 @@ Preview
 Usage:
 
 ```js
+
 import { projectENV, credetials } from '../../../support/helpers'
 
 describe('Should visit admin', () => {
@@ -319,14 +323,21 @@ Drag-n-drop component, this function is already available in general action
 ```js
 const uploadFileUsingLocatorDandD = (locator, path) => {
   return cy.get(locator).attachFile(path, {
+
     action: 'drag-drop',
   })
 }
+
+    action: "drag-drop",
+  });
+};
+
 ```
 
 Attaching multiple files
 
 ```js
+
 cy.get('[data-cy="file-input"]').attachFile(['myfixture.json', 'myfixture.json'])
 ```
 
@@ -350,6 +361,12 @@ If using TypeScript, add cypress-xpath to the list of types to be loaded in tsco
     "types": ["cypress", "cypress-xpath"]
   }
 }
+
+cy.get('[data-cy="file-input"]').attachFile([
+  "myfixture.json",
+  "myfixture.json",
+]);
+
 ```
 
 ## Brief
