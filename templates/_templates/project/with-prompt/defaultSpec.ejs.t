@@ -3,7 +3,7 @@ to: cypress/e2e/<%- project %>/default.cy.js
 ---
 // This is default spec contains before and after hooks and also with an it block
 
-/// <reference types='cypress'/>
+/// <reference types='cypress-xpath'/>
 import * as pages from '../../core/pageObject/pages'
 
 Cypress._.times(1, () => {
