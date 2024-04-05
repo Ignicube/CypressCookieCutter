@@ -403,12 +403,12 @@ module.exports = defineConfig({
 
 ### Additional Options
 
-embeddedScreenshots: Embeds external screenshots into HTML using base64 encoding.
-ignoreVideos: Ignores copying videos recorded by Cypress and excludes them from the report.
-videoOnFailOnly: Adds videos only to tests with failures.
-quiet: Silences console messages.
-saveAllAttempts: Saves screenshots of all test attempts.
-debug: Creates a log file with debug data.
+`embeddedScreenshots` Embeds external screenshots into HTML using base64 encoding.</br>
+`ignoreVideos` Ignores copying videos recorded by Cypress and excludes them from the report.</br>
+`videoOnFailOnly` Adds videos only to tests with failures.</br>
+`quiet` Silences console messages.</br>
+`saveAllAttempts` Saves screenshots of all test attempts.</br>
+`debug` Creates a log file with debug data.</br>
 
 ## Brief
 
