@@ -352,7 +352,65 @@ If using TypeScript, add cypress-xpath to the list of types to be loaded in tsco
 }
 ```
 
+## Mochawsome Reports-Embedded Plugin
+
+Cypress has gained significant popularity as a modern end-to-end testing framework due to its simplicity, speed, and reliability. However, while Cypress Cookies Cuuter provides detailed test results by default, enhancing the reporting capabilities can provide better insights into test execution and results. One such tool that can significantly improve your testing workflow is the Cypress Mochawesome Reporter.
+
+### How to run mochawsome reports?
+
+Cypress cookies cutter doesn't require any additional setup it may be used in headless mode.
+
+```sh
+npx cypress run
+
+```
+
+After running the cypress in headless mode, your Cypress directory will contain a folder entitled report.
+
+```
+- core/
+- e2e/
+- plugins/
+- reports/
+  - html
+    - assets/
+    - index.html
+- support/
+```
+
+index.html is the combined report of each test case.
+
+### Customizing Your Report
+
+The cypress cookies cutter provides various options to customize your HTML report according to your preferences. Here’s an example of how you can customize your report:
+
+```js
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/results', //can change report directory
+    overwrite: false,
+    html: false,
+    json: true,
+  },
+  .
+  .
+  .
+})
+```
+
+### Additional Options
+
+embeddedScreenshots: Embeds external screenshots into HTML using base64 encoding.
+ignoreVideos: Ignores copying videos recorded by Cypress and excludes them from the report.
+videoOnFailOnly: Adds videos only to tests with failures.
+quiet: Silences console messages.
+saveAllAttempts: Saves screenshots of all test attempts.
+debug: Creates a log file with debug data.
+
 ## Brief
 
 No configuring the project with a clean, intuitive, and same project structure we keep everyone consistent across all projects.
-Fully object oriented and well structured.
+Fully object oriented and well structured. To achieve testing features that are quick, dependable, and simple to troubleshoot, numerous plugins are incorporated.
