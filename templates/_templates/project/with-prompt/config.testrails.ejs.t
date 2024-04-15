@@ -44,5 +44,14 @@ module.exports = defineConfig({
   },
   experimentalInteractiveRunEvents: false, // use for cypress open mode
 });
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+    },
+  },
+});
+
 
 
