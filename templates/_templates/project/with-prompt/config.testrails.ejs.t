@@ -8,6 +8,10 @@ const {
   defineConfig
 } = require("cypress");
 
+const {
+  verifyDownloadTasks
+} = require('cy-verify-downloads');
+
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   video: true,
@@ -19,30 +23,26 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   trashAssetsBeforeRuns: true,
   screenshotOnRunFailure: true,
-  defaultCommandTimeout: 50000,  
+  defaultCommandTimeout: 50000,
   retries: {
     runMode: 1,
     openMode: 1,
   },
+
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      return require('./cypress/plugins/index.js')(on, config)
+      on('task', verifyDownloadTasks);
+      require('./cypress/plugins/index.js')(on, config)
       on('before:run', (details) => {
-        /* code that needs to run before all specs */    
+        /* code that needs to run before all specs */
+        require('cypress-mochawesome-reporter/plugin')(on);
+
       })
     },
     testIsolation: false,
   },
   experimentalInteractiveRunEvents: false, // use for cypress open mode
-});
-module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
-  e2e: {
-    setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
-    },
-  },
 });
 
 

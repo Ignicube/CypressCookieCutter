@@ -410,6 +410,26 @@ module.exports = defineConfig({
 `saveAllAttempts` Saves screenshots of all test attempts.</br>
 `debug` Creates a log file with debug data.</br>
 
+## Verify Download-Embedded Plugin
+
+Verify downloaded plugin makes a difference to confirm downloaded records, not matter what is extension of file. By using these variations of the `cy.verifyDownload` command with different options, you can effectively confirm and validate downloaded records regardless of the file extension or partial filename.
+
+In your test, you'll utilize it like this
+
+```js
+cy.verifyDownload('image.png')
+
+// verify download by file extension or partial filename
+cy.verifyDownload('.png', { contains: true })
+cy.verifyDownload('pic', { contains: true })
+
+// or increase timeout
+cy.verifyDownload('archive.zip', { timeout: 25000 })
+
+// or increase timeout and interval pooling
+cy.verifyDownload('project.pdf', { timeout: 25000, interval: 600 })
+```
+
 ## Brief
 
 No configuring the project with a clean, intuitive, and same project structure we keep everyone consistent across all projects.
