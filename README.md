@@ -432,5 +432,5 @@ cy.verifyDownload('project.pdf', { timeout: 25000, interval: 600 })
 
 ## Brief
 
-No configuring the project with a clean, intuitive, and same project structure we keep everyone consistent across all projects.
+No configuration needed with a clean, intuitive, and same project structure we keep everyone consistent across all projects.
 Fully object oriented and well structured. To achieve testing features that are quick, dependable, and simple to troubleshoot, numerous plugins are incorporated.
