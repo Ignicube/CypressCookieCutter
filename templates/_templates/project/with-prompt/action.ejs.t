@@ -22,10 +22,24 @@ const verifyPageURL = () => {
     pages.generalActions.verifyUrl((Cypress.env('baseUrl')))
 }
 
+const xpath = () => {
+
+    cy.xpath("//h2[contains(text(),'Downloads')]").should('be.visible')
+}
+
+const verifyDownloads = () => {
+
+    cy.visit((Cypress.env('downloadDemoSite')))
+    pages.generalActions.clickButtonUsingLocator(elements.pageElements.downloadLinkDemo)
+    cy.verifyDownload('Download.zip')
+}
+
 const pageActions = {
 
     verifyDefaultSccanerio,
-    verifyPageURL
+    verifyPageURL,
+    xpath,
+    verifyDownloads
 
 }
 
