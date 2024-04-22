@@ -1,5 +1,5 @@
 <h1 >Welcome to CypressCookieCutter
-<a href="https://www.ignicube.com/"><img src="https://github.com/Ignicube/CypressCookieCutter/assets/151735556/64a2cd94-24a5-4357-9df2-91eda9634f6a" height="61" width="240" ></a></h1>
+<a href="https://www.ignicube.com/"><img src="https://github.com/Ignicube/CypressCookieCutter/assets/151735556/64a2cd94-24a5-4357-9df2-91eda9634f6a" height="61" width="230" ></a></h1>
 
 <div >Rapidly create modern ventures, and start and begin coding quickly with an as of now pre-configured extend. Whereas utilizing this CypressCookieCutter you and your group can focus more on coding, and less stress around setup. This CypressCookieCutter is full of valuable plugins as of now designed, and much more! Great good fortune!
 </div>
@@ -428,6 +428,53 @@ cy.verifyDownload('archive.zip', { timeout: 25000 })
 
 // or increase timeout and interval pooling
 cy.verifyDownload('project.pdf', { timeout: 25000, interval: 600 })
+```
+
+## CI with GitHub Actions-Embedded
+
+Once you run `npm run add-project` on over 2.2 steps than system will inquire for a confirmation.<br><br> Do you want integrate github action? **(y/N)** <br>
+Once you type y and press enter than a file will make on root named `.github/workflow/main.yml`
+This is very basic configuration of CI with cypress automation, you'll be able modify as per your necessities. This gitHub action will run cypress test on every [push]
+
+```yaml
+name: Cypress test (push)
+on: [push]
+jobs:
+  Cypress-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitCode
+        uses: actions/checkout@v4
+
+      - name: Run Cypress Test
+        uses: cypress-io/github-action@v4
+        with:
+          command: npx cypress run
+          browser: chrome
+```
+
+### Run daily triggers
+
+If you want to trigger your test run on particular or day by day you'll incorporate plan run with time in main.yml or can add new file in workflow folder . Additionally you'll be able alter browser setting as underneath
+
+```yaml
+name: Cypress test (scheduled)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 04 * * *' # runs daily At 04:00 AM
+jobs:
+  Cypress-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitCode
+        uses: actions/checkout@v4
+
+      - name: Run Cypress Test
+        uses: cypress-io/github-action@v4
+        with:
+          command: npx cypress run
+          browser: electron
 ```
 
 ## Brief
