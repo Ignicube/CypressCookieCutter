@@ -430,7 +430,7 @@ cy.verifyDownload('archive.zip', { timeout: 25000 })
 cy.verifyDownload('project.pdf', { timeout: 25000, interval: 600 })
 ```
 
-## CI with GitHub Actions-Embedded
+## CI with GitHub Actions-Embedded Plugin
 
 Once you run `npm run add-project` on over 2.2 steps than system will inquire for a confirmation.<br><br> Do you want integrate github action? **(y/N)** <br>
 Once you type y and press enter than a file will make on root named `.github/workflow/main.yml`
@@ -476,6 +476,46 @@ jobs:
           command: npx cypress run
           browser: electron
 ```
+
+## Wailuntil plugin-Embedded Plugin
+
+Use this plugin to wait for everything not expected by Cypress wait. This can be very useful plugin this may be quicker your test.
+
+Usage:
+
+```js
+// wait until a cookie is set
+cy.waitUntil(() => cy.getCookie('token').then((cookie) => Boolean(cookie && cookie.value)))
+
+// wait until a global variable has an expected value
+cy.waitUntil(() => cy.window().then((win) => win.foo === 'bar'))
+
+// sync function works too!
+cy.waitUntil(() => true)
+
+// with all the available options
+cy.waitUntil(() => cy.window().then((win) => win.foo === 'bar'), {
+  errorMsg: 'This is a custom error message', // overrides the default error message
+  timeout: 2000, // waits up to 2000 ms, default to 5000
+  interval: 500, // performs the check every 500 ms, default to 200
+})
+```
+
+### Arguments
+
+Pass in an options object to change the default behavior of cy.waitUntil().
+
+| Option             | Type             | Default            | Description                                                                                                            |
+| ------------------ | ---------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| errorMsg           | string/ function | Timed out retrying | The error message to write. If it's a function, it will receive the last result and the options passed to cy.waitUntil |
+| timeout            | number           | 5000               | Time to wait for the checkFunction to return a truthy value before throwing an error.                                  |
+| interval           | number           | 200                | Time to wait between the checkFunction invocations.                                                                    |
+| description        | string           | waitUntil          | The name logged into the Cypress Test Runner.                                                                          |
+| logger             | function         | Cypress.log        | A custom logger in place of the default Cypress.log. It's useful just for debugging purposes.                          |
+| log                | boolean          | true               | Enable/disable logging.                                                                                                |
+| customMessage      | string           | undefined          | String logged after the options.description.                                                                           |
+| verbose            | string           | false              | If every single check result must be logged.                                                                           |
+| customCheckMessage | string           | undefined          | Like customMessage, but used for every single check. Useless if verbose is not set to true.                            |
 
 ## Brief
 
