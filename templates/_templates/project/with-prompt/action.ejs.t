@@ -33,13 +33,18 @@ const verifyDownloads = () => {
     pages.generalActions.clickButtonUsingLocator(elements.pageElements.downloadLinkDemo)
     cy.verifyDownload('Download.zip')
 }
+const waitUntil = () => {
+
+    cy.waitUntil(() => true);
+}
 
 const pageActions = {
 
     verifyDefaultSccanerio,
     verifyPageURL,
     xpath,
-    verifyDownloads
+    verifyDownloads,
+    waitUntil
 
 }
 
