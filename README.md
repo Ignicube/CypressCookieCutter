@@ -7,11 +7,11 @@
 
 ## Step 1. Prerequisites
 
-Node.js must be installed before installing Cypress. NodeJS is a runtime environment that's helps to create server-side JavaScript applications.
+Node.js must be installed before installing Cypress. NodeJS is a runtime environment that helps to create server-side JavaScript applications.
 
 ### 1.1 Installing Node.js
 
-You can use the below link to install Node.js. Then click the Windows installer .msi file for installation. https://nodejs.org/en/download
+You can use the link below to install Node.js. Then click the Windows installer .msi file for installation. https://nodejs.org/en/download
 
 Hopefully, npm installed with Node.js there is only need to update NPM using following command
 
@@ -37,7 +37,7 @@ npx git@github.com:Ignicube/CypressCookieCutter.git my-cypress
 
 ## 2.1 Install dependencies</br>
 
-First, move into folder.
+First, move into the folder.
 
 ```sh
 cd my-cypress
@@ -219,7 +219,7 @@ describe('Should visit admin', () => {
 })
 ```
 
-`projectENV` will always return URL from current set environment, which in this case, is `production`.
+`projectENV` will always return the URL from the current set environment, which in this case, is `production`.
 
 ### fixtures/credentials.json
 
@@ -251,20 +251,20 @@ Preview
 Usage:
 
 ```js
-import { projectENV, credetials } from '../../../support/helpers'
+import { projectENV, credentials } from '../../../support/helpers'
 
 describe('Should visit admin', () => {
   it('Visit and log in ', () => {
     cy.visit(projectENV.admin)
-    cy.logIn(credetials.sampleUser2)
+    cy.logIn(credentials.sampleUser2)
   })
 })
 ```
 
 <h1 >Checkout a few plugins recorded underneath</h1>
-<div >Plugins empower you to tap into, adjust, or expand the inside behaviour of Cypress, some plugins are already enabled</div>
+<div >Plugins empower you to tap into, adjust, or expand the inside behavior of Cypress, some plugins are already enabled</div>
 
-## Cypress Testtrail Reporting-Embedded Plugin
+## Cypress Testrails Reporting-Embedded Plugin
 
 - If you run multiple spec (test) files that are part of the same suite, the test results are combined under a single test run.
 - Results are reported immediately after single test execution (real-time reporting)
@@ -312,7 +312,7 @@ it("Can authenticate a valid userC2", ...
 
 ## Cypress File Upload-Embedded Plugin
 
-Presently, let's see how we are able really test something. Uncovered command has signature like
+Presently, let's see how we are able to really test something. Uncovered command has signature like
 
 Drag-n-drop component, this function is already available in general action
 
@@ -330,14 +330,14 @@ Attaching multiple files
 cy.get('[data-cy="file-input"]').attachFile(['myfixture.json', 'myfixture.json'])
 ```
 
-## Cypress-xpath-Embedded Plugin
+## Cypress-XPath-Embedded Plugin
 
-Type cy. will have xpath command, at some point it's troublesome to discover element's on web than xpath will makes a difference
+Type cy. will have XPath command, at some point it's troublesome to discover element's on web than XPath will makes a difference
 
 Usage:
 
 ```js
-it('xpath usage', () => {
+it('XPath usage', () => {
   cy.xpath('//body/div[1]/div[2]/div[1]/img[1]').should('be.visible')
 })
 ```
@@ -352,13 +352,13 @@ If using TypeScript, add cypress-xpath to the list of types to be loaded in tsco
 }
 ```
 
-## Mochawsome Reports-Embedded Plugin
+## Mochawesome Reports-Embedded Plugin
 
-Cypress has gained significant popularity as a modern end-to-end testing framework due to its simplicity, speed, and reliability. However, while Cypress Cookies Cuuter provides detailed test results by default, enhancing the reporting capabilities can provide better insights into test execution and results. One such tool that can significantly improve your testing workflow is the Cypress Mochawesome Reporter.
+Cypress has gained significant popularity as a modern end-to-end testing framework due to its simplicity, speed, and reliability. However, while Cypress Cookies Cutter provides detailed test results by default, enhancing the reporting capabilities can provide better insights into test execution and results. One such tool that can significantly improve your testing workflow is the Cypress Mochawesome Reporter.
 
-### How to run mochawsome reports?
+### How to run mochawesome reports?
 
-Cypress cookies cutter doesn't require any additional setup it may be used in headless mode.
+Cypress cookies cutter doesn't require any additional setup; it may be used in headless mode.
 
 ```sh
 npx cypress run
@@ -412,7 +412,7 @@ module.exports = defineConfig({
 
 ## Verify Download-Embedded Plugin
 
-Verify downloaded plugin makes a difference to confirm downloaded records, not matter what is extension of file. By using these variations of the `cy.verifyDownload` command with different options, you can effectively confirm and validate downloaded records regardless of the file extension or partial filename.
+Verify downloaded plugin makes a difference to confirm downloaded records, no matter what is the extension of the file. By using these variations of the `cy.verifyDownload` command with different options, you can effectively confirm and validate downloaded records regardless of the file extension or partial filename.
 
 In your test, you'll utilize it like this
 
@@ -432,8 +432,8 @@ cy.verifyDownload('project.pdf', { timeout: 25000, interval: 600 })
 
 ## CI with GitHub Actions-Embedded Plugin
 
-Once you run `npm run add-project` on over 2.2 steps than system will inquire for a confirmation.<br><br> Do you want integrate github action? **(y/N)** <br>
-Once you type y and press enter than a file will make on root named `.github/workflow/main.yml`
+Once you run `npm run add-project` on over 2.2 steps then system will inquire for a confirmation.<br><br> Do you want integrate github action? **(y/N)** <br>
+Once you type y and press enter then a file will be made on root named `.github/workflow/main.yml`
 This is very basic configuration of CI with cypress automation, you'll be able modify as per your necessities. This gitHub action will run cypress test on every [push]
 
 ```yaml
@@ -455,7 +455,7 @@ jobs:
 
 ### Run daily triggers
 
-If you want to trigger your test run on particular or day by day you'll incorporate plan run with time in main.yml or can add new file in workflow folder . Additionally you'll be able alter browser setting as underneath
+If you want to trigger your test run on particular or day by day you'll incorporate a plan run with time in main.yml or can add a new file in workflow the folder . Additionally you'll be able alter browser setting as underneath
 
 ```yaml
 name: Cypress test (scheduled)
@@ -479,7 +479,7 @@ jobs:
 
 ## Wailuntil plugin-Embedded Plugin
 
-Use this plugin to wait for everything not expected by Cypress wait. This can be very useful plugin this may be quicker your test.
+Use this plugin to wait for everything not expected by Cypress wait. This can be a very useful plugin that may quicker your test.
 
 Usage:
 
@@ -516,6 +516,43 @@ Pass in an options object to change the default behavior of cy.waitUntil().
 | customMessage      | string           | undefined          | String logged after the options.description.                                                                           |
 | verbose            | string           | false              | If every single check result must be logged.                                                                           |
 | customCheckMessage | string           | undefined          | Like customMessage, but used for every single check. Useless if verbose is not set to true.                            |
+
+## Mobile Command/ Map-Embedded Plugin
+
+Cypress mobile commands/ map plugin specifically designed to facilitate mobile testing by providing additional commands tailored for mobile interactions. This plugin extends Cypress with commands that simulate common mobile gestures and behaviors, making it easier to write comprehensive end-to-end tests for mobile applications.
+
+Some of the commands provided by cy-mobile-commands may include:
+
+- `cy.mobileSwipe()` This command allows you to simulate swiping gestures on mobile devices, which are commonly used for navigation or scrolling within mobile applications.
+- `cy.mobileTap()` Use this command to simulate tapping on elements in your mobile application, similar to how users interact with touchscreens.
+- `cy.mobileScroll()` This command enables you to simulate scrolling behavior within your mobile application, which is useful for testing scrolling lists or dynamic content.
+- `cy.mobilePinch()` Use this command to simulate pinch gestures, which are often used for zooming in or out on mobile devices.
+- `cy.mobileRotate()` This command allows you to simulate device rotation, which is essential for testing how your application responds to changes in orientation.
+- `cy.mobileDevice()` This command sets the viewport to emulate a specific mobile device, allowing you to test your application's responsiveness across various screen sizes and resolutions.
+- `cy.mobileOrientation()` Use this command to set the orientation of the device viewport, allowing you to test how your application behaves in both portrait and landscape modes.
+- `cy.mobileInput()` This command simulates typing text into input fields on mobile devices, helping you test forms and text entry functionalities.
+
+Usage in independent test case:
+
+```js
+it('Page Swipe', () => {
+  cy.get('.slider').swipe('right', 'left')
+  cy.get('.slider').swipe('left', 'right')
+})
+it('Map', () => {
+  cy.get('.map').swipe(
+    { delay: 2000 },
+    [
+      [100, 200],
+      [65, 35],
+    ],
+    [
+      [140, 300],
+      [50, 500],
+    ],
+  )
+})
+```
 
 ## Brief
 
