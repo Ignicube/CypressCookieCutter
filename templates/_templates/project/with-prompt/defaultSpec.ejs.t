@@ -1,7 +1,7 @@
 ---
 to: cypress/e2e/<%- project %>/default.cy.js
 ---
-// This is default spec contains before and after hooks and also with an it block
+// This is default spec, which contains before, after hooks and also with an it block
 
 
 /// <reference types='cypress-xpath'/>
@@ -41,8 +41,11 @@ Cypress._.times(1, () => {
         it('Verify Download', () => {
             pages.pageActions.verifyDownloads()
         })
-         it('Wait Until', () => {
+        it('Wait Until', () => {
             pages.pageActions.waitUntil()
+        })
+        it('Cypress If', () => {
+            pages.pageActions.ifElse()
         })
 
     })

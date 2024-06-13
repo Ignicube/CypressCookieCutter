@@ -554,6 +554,26 @@ it('Map', () => {
 })
 ```
 
+## Cypress if-Embedded Plugin
+
+In the context of Cypress, the end-to-end testing framework for web applications, handling conditional logic directly within your tests might require you to use JavaScript's standard if-else statements. However, if you're looking for plugins or methods to handle conditional scenarios more elegantly.
+
+Let's say, there is a dialog that might sometimes be visible when you visit the page. You can close it by finding it using the cy.get command followed by the .if() command. If the dialog really exists, then all commands chained after .if() run. If the dialog is not found, then the rest of the chain is skipped.
+
+```js
+cy.get('dialog#survey').if().contains('button', 'Close').click()
+```
+
+### else Command
+
+You can chain .else() command that is only executed if the .if() is skipped.
+
+```js
+cy.contains('Accept cookies').if('visible').click().else().log('no cookie banner')
+```
+
+By default, the .if() command just checks the existence of the element returned by the cy.get command. You might use instead a different assertion, like close a dialog, callback function, combining assertion, multiple commands, within, finally, aliases and null values.
+
 ## Brief
 
 No configuration needed with a clean, intuitive, and same project structure we keep everyone consistent across all projects.
