@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Ignicube/CypressCookieCutter#readme",
   "devDependencies": {
+    "cy-mobile-commands": "^0.3.0",
     "cy-verify-downloads": "^0.2.3",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-wait-until": "^3.0.1",
