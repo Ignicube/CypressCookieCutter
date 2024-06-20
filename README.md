@@ -574,6 +574,8 @@ cy.contains('Accept cookies').if('visible').click().else().log('no cookie banner
 
 By default, the .if() command just checks the existence of the element returned by the cy.get command. You might use instead a different assertion, like close a dialog, callback function, combining assertion, multiple commands, within, finally, aliases and null values.
 
+=======
+
 ## Brief
 
 No configuration needed with a clean, intuitive, and same project structure we keep everyone consistent across all projects.
