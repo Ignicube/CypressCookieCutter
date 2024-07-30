@@ -37,6 +37,14 @@ const waitUntil = () => {
 
     cy.waitUntil(() => true);
 }
+const ifElse = () => {
+
+    cy.contains('Accept cookies')
+        .if('visible')
+        .click()
+        .else()
+        .log('no cookie banner')
+}
 
 const pageActions = {
 
@@ -44,7 +52,8 @@ const pageActions = {
     verifyPageURL,
     xpath,
     verifyDownloads,
-    waitUntil
+    waitUntil,
+    ifElse
 
 }
 
