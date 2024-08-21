@@ -21,5 +21,13 @@
     "cy-verify-downloads": "^0.2.3",
     "cypress-wait-until": "^3.0.1",
     "cy-mobile-commands": "^0.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e/"
+  },
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "save-dev": "^0.0.1-security"
   }
 }
